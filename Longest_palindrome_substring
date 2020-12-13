@@ -1,0 +1,38 @@
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+            def num_comb(x):
+                y=[]
+                o=[]
+                if x==2:
+                    y=['a','b','c']
+                elif x==3:
+                    y=['d','e','f']
+                elif x==4:
+                    y=['g','h','i']
+                elif x==5:
+                    y=['j','k','l']
+                elif x==6:
+                    y=['m','n','o']
+                elif x==7:
+                    y=['p','q','r','s']
+                elif x==8:
+                    y=['t','u','v']
+                elif x==9:
+                    y=['w','x','y','z']
+                return y
+            k=digits
+            j=[]
+            p=[]
+            w=[]
+            for i in k:
+                j=num_comb(int(i))
+                if p==[]:
+                    p=j
+                    continue
+                #print(p,j)
+                w=p
+                p=[]
+                for i in w:
+                    for u in j:
+                        p.append(i+u)
+            return p
